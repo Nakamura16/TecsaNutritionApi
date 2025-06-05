@@ -39,7 +39,7 @@ public class PatientRepository : IPatientRepository
     public async Task<Patient> GetPatientById(int id)
     {
         var maybePatient = await context.Patients.FirstOrDefaultAsync(p => p.Id == id)
-            ?? throw new NotFoundException($"Patient with Id [{id}] was not found."); ;
+            ?? throw new NotFoundException($"Patient with Id [{id}] was not found.");
 
         return converter.ToModel(maybePatient);
     }

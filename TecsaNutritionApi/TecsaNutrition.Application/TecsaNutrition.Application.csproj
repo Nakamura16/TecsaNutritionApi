@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TecsaNutrition.Models\TecsaNutrition.Models.csproj" />
+  </ItemGroup>
+
 </Project>
