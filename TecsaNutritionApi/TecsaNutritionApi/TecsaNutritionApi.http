@@ -1,0 +1,6 @@
+@TecsaNutritionApi_HostAddress = http://localhost:5160
+
+GET {{TecsaNutritionApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
