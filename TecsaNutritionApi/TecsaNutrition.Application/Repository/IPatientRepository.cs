@@ -1,7 +1,7 @@
 ﻿using TecsaNutrition.Models;
 using TecsaNutrition.Models.ApiHelpers;
 
-namespace TecsaNutrition.Application;
+namespace TecsaNutrition.Application.Repository;
 
 public interface IPatientRepository
 {

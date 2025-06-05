@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Security.AccessControl;
-using TecsaNutrition.Application;
+using TecsaNutrition.Application.Repository;
 using TecsaNutrition.Data.Converter;
 using TecsaNutrition.Data.Exceptions;
 using TecsaNutrition.Models;
