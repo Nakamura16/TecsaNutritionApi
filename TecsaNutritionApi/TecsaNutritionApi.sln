@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecsaNutritionApi", "TecsaNutritionApi\TecsaNutritionApi.csproj", "{FA4FEEE5-FAEC-4BE2-8D12-C5D0D990290E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecsaNutrition.Models", "TecsaNutrition.Models\TecsaNutrition.Models.csproj", "{48AA4819-2EE8-4EA2-A38B-1DFCB113A90C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FA4FEEE5-FAEC-4BE2-8D12-C5D0D990290E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA4FEEE5-FAEC-4BE2-8D12-C5D0D990290E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA4FEEE5-FAEC-4BE2-8D12-C5D0D990290E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48AA4819-2EE8-4EA2-A38B-1DFCB113A90C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48AA4819-2EE8-4EA2-A38B-1DFCB113A90C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48AA4819-2EE8-4EA2-A38B-1DFCB113A90C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48AA4819-2EE8-4EA2-A38B-1DFCB113A90C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
