@@ -1,5 +1,8 @@
-﻿using System.Security.AccessControl;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Security.AccessControl;
 using TecsaNutrition.Application;
+using TecsaNutrition.Data.Converter;
+using TecsaNutrition.Data.Exceptions;
 using TecsaNutrition.Models;
 using TecsaNutrition.Models.ApiHelpers;
 
@@ -8,19 +11,36 @@ namespace TecsaNutrition.Data.Repository;
 public class PatientRepository : IPatientRepository
 {
     private readonly TecsaNutritionContext context;
+    private readonly IPatientConverter converter;
 
-    public PatientRepository(TecsaNutritionContext context)
+    public PatientRepository(
+        TecsaNutritionContext context,
+        IPatientConverter converter)
     {
         this.context = context;
+        this.converter = converter;
     }
 
-    public Task<OperationResult> CreatePatient(Patient patient)
+    public async Task<OperationResult> CreatePatient(Patient patient)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var patientEntity = converter.ToEntity(patient);
+            context.Patients.Add(patientEntity);
+            await context.SaveChangesAsync();
+            return new OperationResult(true, string.Empty);
+        }
+        catch (Exception ex) 
+        {
+            return new OperationResult(false, ex.Message);
+        }
     }
 
-    public Task<Patient> GetPatientById(int id)
+    public async Task<Patient> GetPatientById(int id)
     {
-        throw new NotImplementedException();
+        var maybePatient = await context.Patients.FirstOrDefaultAsync(p => p.Id == id)
+            ?? throw new NotFoundException($"Patient with Id [{id}] was not found."); ;
+
+        return converter.ToModel(maybePatient);
     }
 }
