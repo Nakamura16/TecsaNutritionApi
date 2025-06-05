@@ -22,11 +22,11 @@ public class PatientController : ControllerBase
 
     // TODO: Create Resource
     [HttpGet(nameof(GetPatientBy))]
-    public ActionResult<Patient> GetPatientBy(int id)
+    public async Task<ActionResult<Patient>> GetPatientBy(int id)
     {
         try
         {
-            var patient = service.GetPatientById(id);
+            var patient = await service.GetPatientById(id);
             return Ok(patient);
         }
         catch (Exception ex) 

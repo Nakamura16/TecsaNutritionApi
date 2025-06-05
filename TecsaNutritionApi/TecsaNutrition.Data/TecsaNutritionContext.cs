@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TecsaNutrition.Data.Entity;
+using TecsaNutrition.Models;
 
 namespace TecsaNutrition.Data;
 
@@ -12,5 +13,7 @@ public class TecsaNutritionContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<PatientEntity>().HasData(
+            new PatientEntity(1, "André", "email", "234", "Male", 11, 12));
     }
 }
