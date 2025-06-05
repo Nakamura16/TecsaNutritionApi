@@ -8,6 +8,7 @@ public class Patient
     public Gender Gender { get; set; }
     public double Weight { get; set; }
     public int HeightInCentimeters { get; set; }
+    public MealPlan MealPlan{ get; set; }
 
     public Patient(
         string name,
@@ -15,7 +16,8 @@ public class Patient
         string phoneNumber,
         Gender gender,
         double weight,
-        int heightInCentimeters)
+        int heightInCentimeters,
+        MealPlan mealPlan)
     {
         Name = name;
         Email = email;
@@ -23,6 +25,7 @@ public class Patient
         Gender = gender;
         Weight = weight;
         HeightInCentimeters = heightInCentimeters;
+        MealPlan = mealPlan;
     }
 }
 
