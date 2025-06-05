@@ -11,8 +11,8 @@ using TecsaNutrition.Data;
 namespace TecsaNutrition.Data.Migrations
 {
     [DbContext(typeof(TecsaNutritionContext))]
-    [Migration("20250605031424_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250605040620_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

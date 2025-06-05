@@ -1,9 +1,13 @@
-﻿using System.Reflection;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.Reflection;
 
 namespace TecsaNutrition.Data.Entity;
 
 public class PatientEntity
-{ 
+{
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
     public string Name { get; set; }
     public string Email { get; set; }
@@ -12,7 +16,7 @@ public class PatientEntity
     public double Weight { get; set; }
     public int HeightInCentimeters { get; set; }
     
-    public PatientEntity(int id,
+    public PatientEntity(
         string name,
         string email,
         string phoneNumber,
@@ -20,7 +24,6 @@ public class PatientEntity
         double weight,
         int heightInCentimeters)
     {
-        Id = id;
         Name = name;
         Email = email;
         PhoneNumber = phoneNumber;

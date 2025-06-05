@@ -19,7 +19,6 @@ public class PatientConverter : IPatientConverter
     public PatientEntity ToEntity(Patient model)
     {
         return new PatientEntity(
-            id: 1, // dummy value, it will be generated on the database
             name: model.Name,
             email: model.Email,
             phoneNumber: model.PhoneNumber,

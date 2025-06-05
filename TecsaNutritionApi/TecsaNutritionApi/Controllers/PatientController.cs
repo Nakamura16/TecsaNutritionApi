@@ -34,4 +34,15 @@ public class PatientController : ControllerBase
             return BadRequest(ex.Message);
         }
     }
+
+    [HttpPost(nameof(CreatePatient))]
+    public async Task<ActionResult<Patient>> CreatePatient([FromBody]Patient patient)
+    {
+        var operationResult = await service.CreatePatient(patient);
+        if (!operationResult.IsSuccess)
+        {
+            return BadRequest(operationResult.Message);
+        }
+        return Ok(patient);
+    }
 }

@@ -14,6 +14,6 @@ public class TecsaNutritionContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<PatientEntity>().HasData(
-            new PatientEntity(1, "André", "email", "234", "Male", 11, 12));
+            new PatientEntity("André", "email", "234", "Male", 11, 12) { Id = 1});
     }
 }
