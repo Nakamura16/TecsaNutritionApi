@@ -27,4 +27,14 @@ public class PatientService : IPatientService
     {
         return await patientRepository.CreatePatient(patient);
     }
+
+    public async Task<OperationResult> UpdatePatient(int id, Patient newPatient)
+    {
+        return await patientRepository.UpdatePatient(id, newPatient);
+    }
+
+    public async Task<OperationResult> DeletetePatient(int id)
+    {
+        return await patientRepository.DeletetePatient(id);
+    }
 }

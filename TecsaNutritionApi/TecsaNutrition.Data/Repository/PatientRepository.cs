@@ -2,6 +2,7 @@
 using System.Security.AccessControl;
 using TecsaNutrition.Application.Repository;
 using TecsaNutrition.Data.Converter;
+using TecsaNutrition.Data.Entity;
 using TecsaNutrition.Data.Exceptions;
 using TecsaNutrition.Models;
 using TecsaNutrition.Models.ApiHelpers;
@@ -38,9 +39,52 @@ public class PatientRepository : IPatientRepository
 
     public async Task<Patient> GetPatientById(int id)
     {
-        var maybePatient = await context.Patients.FirstOrDefaultAsync(p => p.Id == id)
-            ?? throw new NotFoundException($"Patient with Id [{id}] was not found.");
-
+        PatientEntity maybePatient = await FindPatientBy(id);
         return converter.ToModel(maybePatient);
+    }
+
+    public async Task<OperationResult> UpdatePatient(int id,Patient newPatient)
+    {
+        try
+        {
+            var existingPatient = await FindPatientBy(id);
+
+            existingPatient.Name = newPatient.Name;
+            existingPatient.Email = newPatient.Email;
+            existingPatient.PhoneNumber = newPatient.PhoneNumber;
+            existingPatient.Gender = newPatient.Gender.ToString();
+            existingPatient.Weight = newPatient.Weight;
+            existingPatient.HeightInCentimeters = newPatient.HeightInCentimeters;
+
+            context.Patients.Update(existingPatient);
+            await context.SaveChangesAsync();
+
+            return new OperationResult(true, string.Empty);
+        }
+        catch (Exception ex) 
+        {
+            return new OperationResult(false, ex.Message);
+        }
+    }
+
+    public async Task<OperationResult> DeletetePatient(int id)
+    {
+        try
+        {
+            PatientEntity maybePatient = await FindPatientBy(id);
+            context.Patients.Remove(maybePatient);
+            context.SaveChanges();
+            return new OperationResult(true, string.Empty);
+        }
+        catch (Exception ex) 
+        {
+            return new OperationResult(false, ex.Message);
+        }
+    }
+
+    private async Task<PatientEntity> FindPatientBy(int id)
+    {
+        return await context.Patients.FirstOrDefaultAsync(p => p.Id == id)
+            ?? throw new NotFoundException($"Patient with Id [{id}] was not found.");
     }
 }

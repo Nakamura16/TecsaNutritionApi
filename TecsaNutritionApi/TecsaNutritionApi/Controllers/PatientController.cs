@@ -45,4 +45,26 @@ public class PatientController : ControllerBase
         }
         return Ok(patient);
     }
+
+    [HttpPut(nameof(UpdatePatient))]
+    public async Task<ActionResult<Patient>> UpdatePatient(int id, [FromBody] Patient patient)
+    {
+        var operationResult = await service.UpdatePatient(id, patient);
+        if (!operationResult.IsSuccess)
+        {
+            return BadRequest(operationResult.Message);
+        }
+        return Ok();
+    }
+
+    [HttpDelete(nameof(DeletePatient))]
+    public async Task<ActionResult<Patient>> DeletePatient(int id)
+    {
+        var operationResult = await service.DeletetePatient(id);
+        if (!operationResult.IsSuccess)
+        {
+            return BadRequest(operationResult.Message);
+        }
+        return Ok();
+    }
 }
