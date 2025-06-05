@@ -7,7 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.5" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TecsaNutrition.Application\TecsaNutrition.Application.csproj" />
+    <ProjectReference Include="..\TecsaNutrition.Data\TecsaNutrition.Data.csproj" />
+    <ProjectReference Include="..\TecsaNutrition.Models\TecsaNutrition.Models.csproj" />
   </ItemGroup>
 
 </Project>

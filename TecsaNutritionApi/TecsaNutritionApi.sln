@@ -5,6 +5,12 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecsaNutritionApi", "TecsaNutritionApi\TecsaNutritionApi.csproj", "{FA4FEEE5-FAEC-4BE2-8D12-C5D0D990290E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecsaNutrition.Models", "TecsaNutrition.Models\TecsaNutrition.Models.csproj", "{48AA4819-2EE8-4EA2-A38B-1DFCB113A90C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecsaNutrition.Data", "TecsaNutrition.Data\TecsaNutrition.Data.csproj", "{195D7506-EEA2-43FF-BB8D-6A912EEA39B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecsaNutrition.Application", "TecsaNutrition.Application\TecsaNutrition.Application.csproj", "{9B31674F-786A-4DA3-9626-D078BC436F95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{FA4FEEE5-FAEC-4BE2-8D12-C5D0D990290E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA4FEEE5-FAEC-4BE2-8D12-C5D0D990290E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA4FEEE5-FAEC-4BE2-8D12-C5D0D990290E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48AA4819-2EE8-4EA2-A38B-1DFCB113A90C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48AA4819-2EE8-4EA2-A38B-1DFCB113A90C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48AA4819-2EE8-4EA2-A38B-1DFCB113A90C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48AA4819-2EE8-4EA2-A38B-1DFCB113A90C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{195D7506-EEA2-43FF-BB8D-6A912EEA39B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{195D7506-EEA2-43FF-BB8D-6A912EEA39B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{195D7506-EEA2-43FF-BB8D-6A912EEA39B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{195D7506-EEA2-43FF-BB8D-6A912EEA39B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B31674F-786A-4DA3-9626-D078BC436F95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B31674F-786A-4DA3-9626-D078BC436F95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B31674F-786A-4DA3-9626-D078BC436F95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B31674F-786A-4DA3-9626-D078BC436F95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
